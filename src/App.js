@@ -1,25 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment, useState } from "react";
+import Header1 from "./components/Header";
+import "antd/dist/antd.min.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Categories from "./pages/categories";
+import ListFood from "./pages/listfood";
+import { message, Layout } from "antd";
+import Cart from "./pages/Cart";
+import Login from "./pages/Login";
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Layout>
+                <Header1></Header1>
+                <Categories />
+              </Layout>
+            }
+          />
+          <Route
+            path="/listfood:name"
+            element={
+              <Layout>
+                <Header1></Header1>
+                <ListFood />
+              </Layout>
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <Layout>
+                <Header1></Header1>
+                <Cart />
+              </Layout>
+            }
+          />
+           <Route
+            path="/login"
+            element={
+              <Layout>
+                <Header1></Header1>
+                <Login />
+              </Layout>
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

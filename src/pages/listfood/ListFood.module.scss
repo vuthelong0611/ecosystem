@@ -1,0 +1,26 @@
+.img {
+    height: 140px;
+    width: 243px;
+}
+
+// .container-fluid{
+//     margin-right: 10px;
+// }
+@media screen and (max-width: 1100px) {
+    .img {
+        height: 133.6px;
+        width: 237.6px;
+    }
+}
+
+/* On screens that are 600px wide or less, the background color is olive */
+@media screen and (max-width: 600px) {}
+
+.container {
+    margin-top: 110px;
+    margin-left: 45px;
+}
+
+.container-fluid {
+
+}
