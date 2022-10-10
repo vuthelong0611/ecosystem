@@ -8,6 +8,7 @@ const cx = classNames.bind(styles);
 const { Header, Footer, Sider, Content } = Layout;
 function Header1() {
   const { user, setUser } = useGlobalContext();
+
   const logOut = () => {
     localStorage.removeItem("user");
     window.location.reload(true);
@@ -26,20 +27,24 @@ function Header1() {
       }}
     >
       <div className={cx("head")}>
-        <Link to="/" className={cx('link-home')}>
+        <Link to="/" className={cx("link-home")}>
           <img
             className={cx("img-icon")}
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRg35YAs8vvMD9O-v9heloOtzIcUfSfAXrkQ&usqp=CAU"
             alt=""
-          /><h2>
-            ECOSYSTEM
-          </h2>
+          />
+          <h2>ECOSYSTEM</h2>
         </Link>
-        
-        <div className={cx("cart")}>
-          <Link to="/cart"><div>Cart</div></Link>
-          <Link to="/manage"><div>Manage</div></Link>
 
+        <div className={cx("cart")}>
+          <Link to="/cart">
+            <div>Cart</div>
+          </Link>
+          {user.length !== 0 && user[0].type === "type 1" && (
+            <Link to="/manage">
+              <div>Manage</div>
+            </Link>
+          )}
           {user.length !== 0 && (
             <div className={cx("btn-logout")} onClick={logOut}>
               Logout

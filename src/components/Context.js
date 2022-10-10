@@ -18,13 +18,20 @@ const getLocalStorage1 = () => {
     return [];
   }
 };
-
+const getLocalStorage2 = () => {
+  let list = localStorage.getItem("cart1");
+  if (list) {
+    return (list = JSON.parse(localStorage.getItem("cart1")));
+  } else {
+    return [];
+  }
+};
 
 const AppProvider = ({ children }) => {
   const [user, setUser] = useState(getLocalStorage());
   const [cart, setCart] = useState(getLocalStorage1());
+  const [hey, setHey] = useState(getLocalStorage2());
   const [alert, setAlert] = useState(false);
-  console.log(alert);
 
   const getBill = () => {
     let bill = 0;
@@ -59,10 +66,10 @@ const AppProvider = ({ children }) => {
   }, [cart]);
 
   useEffect(() => {
-     setTimeout(() => {
+    setTimeout(() => {
       setAlert(false);
     }, 1000);
-  },[orderNow]);
+  }, [orderNow]);
 
   const increase = (item1) => {
     item1.count = item1.count + 1;
@@ -91,9 +98,9 @@ const AppProvider = ({ children }) => {
       setCart(tempCart);
     }
   };
-  const removeCart = () =>{
-    setCart([])
-  }
+  const removeCart = () => {
+    setCart([]);
+  };
 
   return (
     <AppContext.Provider
@@ -108,6 +115,8 @@ const AppProvider = ({ children }) => {
         bill,
         alert,
         removeCart,
+        hey,
+        setHey,
       }}
     >
       {children}

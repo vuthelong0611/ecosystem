@@ -19,13 +19,12 @@
 @media screen and (max-width: 600px) {}
 
 .container {
-    margin-top: 110px;
     margin-left: 45px;
     border: solid;
-    width: 80%;
+    flex: 5;
 }
 
-.btn{
+.btn {
     margin-left: 20px;
     cursor: pointer;
     border: none;
@@ -33,7 +32,8 @@
     border-radius: 4px;
     color: white;
 }
-.btn1{
+
+.btn1 {
     margin-left: 20px;
     cursor: pointer;
     border: none;
@@ -42,19 +42,58 @@
     color: white;
     padding: 3.5px 6px;
 }
-.more{
+
+.more {
     margin-left: 40%;
     margin-top: 50px;
     cursor: pointer;
-    
-width: 100px;
- &:hover{
-    background-color: #008B8B;
- }
+
+    width: 100px;
+
+    &:hover {
+        background-color: #008B8B;
+    }
 }
-.button{
+
+.button {
     display: flex;
 }
-.content{
+
+.content {
     text-align: center;
+}
+
+.img_file {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.all {
+    display: flex;
+    margin-top: 110px;
+    justify-content: space-around;
+}
+
+.form {
+    flex: 3;
+    border: solid;
+    height: 500px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.input{
+    margin-top: 10px;
+    width: 80%;
+    text-align: center;
+    margin-left: 45px;
+    
+}
+.btn-submit{
+    width: 100px;
+    margin-top: 30px;
+    margin-left: 40%;
+    cursor: pointer;
 }
