@@ -62,47 +62,57 @@ function Manage() {
   return (
     <section className={cx("all")}>
       <table className={cx("container")}>
-        <tr>
-          <th>Image</th>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Grade</th>
-          <th>Description</th>
-        </tr>
-        {jobs.map((item, index) => {
-          return (
-            <tr className={cx("content")} key={index}>
-              <td>
-                <Link to={`/detail${item.name}`} item={item}>
-                  {" "}
-                  <img className={cx("img")} src={item.avatar} alt=""></img>
-                </Link>
-              </td>
-              <td>{item.name}</td>
-              <td>{` ${item.price}`}</td>
+        <tbody>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Grade</th>
+            <th>Description</th>
+          </tr>
+          {jobs.map((item, index) => {
+            return (
+              <tr className={cx("content")} key={index}>
+                <td>
+                  <Link to={`/detail${item.name}`} item={item}>
+                    {" "}
+                    <img className={cx("img")} src={item.avatar} alt=""></img>
+                  </Link>
+                </td>
+                <td>{item.name}</td>
+                <td>{` ${item.price}`}</td>
 
-              <td>{` ${item.grade}`}</td>
-              <td>{item.description}</td>
-            </tr>
+                <td>{` ${item.grade}`}</td>
+                <td>{item.description}</td>
+              </tr>
 
-            // </Col>
-          );
-        })}
-        <div className={cx("button")}>
-          <button
-            onClick={() => setNumber((prev) => prev - 1)}
-            className={cx("more")}
-          >
-            Prev
-          </button>
-          <button
-            onClick={() => setNumber((prev) => prev + 1)}
-            className={cx("more")}
-          >
-            Next
-          </button>
-        </div>
+              // </Col>
+            );
+          })}
+        </tbody>
       </table>
+      <div className={cx("button")}>
+        <button
+          onClick={() =>
+            setNumber((prev) => {
+              if (number > 1) {
+                return prev - 1;
+              }else{
+                return prev
+              }
+            })
+          }
+          className={cx("more")}
+        >
+          Prev
+        </button>
+        <button
+          onClick={() => setNumber((prev) => prev + 1)}
+          className={cx("more")}
+        >
+          Next
+        </button>
+      </div>
       <form className={cx("form")} onSubmit={(e) => handleSubmit(e)}>
         <input type="file" onChange={handlePreviewAvatar} required />
         {avatar && (
@@ -114,7 +124,7 @@ function Manage() {
             setName(e.target.value);
           }}
           value={name}
-          className={cx('input')}
+          className={cx("input")}
           required
           placeholder="name"
         />
@@ -124,10 +134,9 @@ function Manage() {
             setDecription(e.target.value);
           }}
           value={description}
-          className={cx('input')}
+          className={cx("input")}
           required
           placeholder="description"
-
         />
         <input
           type="text"
@@ -135,10 +144,9 @@ function Manage() {
             setRestaurant(e.target.value);
           }}
           value={restaurant}
-          className={cx('input')}
+          className={cx("input")}
           required
           placeholder="restaurant"
-
         />
         <input
           type="text"
@@ -146,12 +154,11 @@ function Manage() {
             setAddress(e.target.value);
           }}
           value={address}
-          className={cx('input')}
+          className={cx("input")}
           required
           placeholder="address"
-
         />
-        <input type="submit" className={cx('btn-submit')}/>
+        <input type="submit" className={cx("btn-submit")} />
       </form>
     </section>
   );

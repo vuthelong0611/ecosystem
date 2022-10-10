@@ -45,10 +45,12 @@ function Header1() {
               <div>Manage</div>
             </Link>
           )}
-          {user.length !== 0 && (
+          {user.length !== 0 ? (
             <div className={cx("btn-logout")} onClick={logOut}>
               Logout
             </div>
+          ) : (
+              <Link to="/login"> Login</Link>
           )}
         </div>
       </div>

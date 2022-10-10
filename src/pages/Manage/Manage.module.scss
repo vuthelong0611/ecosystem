@@ -89,11 +89,17 @@
     width: 80%;
     text-align: center;
     margin-left: 45px;
-    
+
 }
 .btn-submit{
     width: 100px;
     margin-top: 30px;
     margin-left: 40%;
     cursor: pointer;
+}
+.button{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    flex: 2;
 }
