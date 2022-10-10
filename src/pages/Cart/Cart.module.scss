@@ -1,0 +1,38 @@
+.img {
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: white solid 0.1px;
+    justify-content: space-around;
+    padding: 10px;
+
+}
+
+.count {
+    display: flex;
+}
+
+.btn {
+    background-color: #008B8B;
+    color: white;
+    padding: 10px 10px;
+    margin-left: 50%;
+    margin-top: 50px;
+}
+.btn1{
+    background-color: #008B8B;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+    min-width: 30px;
+ 
+}

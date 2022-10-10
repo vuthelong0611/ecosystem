@@ -1,7 +1,8 @@
 .img {
-    height: 140px;
-    width: 243px;
-    border-radius: 4px;
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 // .container-fluid{
@@ -20,11 +21,10 @@
 .container {
     margin-top: 110px;
     margin-left: 45px;
+    border: solid;
+    width: 80%;
 }
 
-.price{
-    display: flex;
-}
 .btn{
     margin-left: 20px;
     cursor: pointer;
@@ -51,4 +51,10 @@ width: 100px;
  &:hover{
     background-color: #008B8B;
  }
+}
+.button{
+    display: flex;
+}
+.content{
+    text-align: center;
 }

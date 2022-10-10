@@ -7,7 +7,11 @@ import ListFood from "./pages/listfood";
 import { message, Layout } from "antd";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
-
+import DetailFood from "./pages/DetailFood";
+import Pay from "./pages/Pay";
+import Manage from "./pages/Manage";
+import Success from "./pages/Success";
+const {Content} = Layout;
 
 const App = () => {
   return (
@@ -41,12 +45,48 @@ const App = () => {
               </Layout>
             }
           />
-           <Route
+          <Route
             path="/login"
             element={
               <Layout>
                 <Header1></Header1>
-                <Login />
+                <Content><Login /></Content> 
+              </Layout>
+            }
+          />
+           <Route
+            path="/detail:name"
+            element={
+              <Layout>
+                <Header1></Header1>
+                <Content><DetailFood /></Content> 
+              </Layout>
+            }
+          />
+            <Route
+            path="/pay"
+            element={
+              <Layout>
+                <Header1></Header1>
+                <Content><Pay /></Content> 
+              </Layout>
+            }
+          />
+           <Route
+            path="/manage"
+            element={
+              <Layout>
+                <Header1></Header1>
+                <Content><Manage /></Content> 
+              </Layout>
+            }
+          />
+           <Route
+            path="/success"
+            element={
+              <Layout>
+                <Header1></Header1>
+                <Content><Success /></Content> 
               </Layout>
             }
           />

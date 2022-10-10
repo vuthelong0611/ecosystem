@@ -1,0 +1,32 @@
+.container {
+    height: 300px;
+    width: 400px;
+    border: solid white;
+    margin: 110px auto;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+}
+
+.input {
+    height: 30px;
+    margin: 50px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 4px;
+}
+
+.submit {
+    margin: auto 40%;
+    height: 40px;
+    width: 80px;
+    background-color: #007FFF;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.p{
+    font-weight: 600;
+    font-size: large;
+}

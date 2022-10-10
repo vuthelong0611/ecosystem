@@ -1,0 +1,52 @@
+.img {
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: white solid 0.1px;
+    justify-content: space-around;
+    padding: 10px;
+
+}
+
+.count {
+    display: flex;
+}
+
+.btn {
+    background-color: #008B8B;
+    color: white;
+    padding: 10px 10px;
+    margin-left: 50%;
+    margin-top: 50px;
+}
+.fee{
+    margin-left: 80%;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 500px;
+    border: solid;
+    margin-left: 100px;
+    background-color: #008B8B;
+    border: none;
+
+}
+.select{
+    width: 60%;
+    margin: auto;
+}
+.dathang{
+    margin-top: 30px;
+    margin-left: 30%;
+    cursor: pointer;
+    
+}

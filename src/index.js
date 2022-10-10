@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Globalstyles from './components/Globalstyles';
+import { AppProvider } from './components/Context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Globalstyles>
-    <App />
+      <AppProvider>
+      <App />
+      </AppProvider>
     </Globalstyles>
   </React.StrictMode>
 );

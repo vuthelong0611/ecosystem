@@ -33,8 +33,7 @@ function Categories() {
             {jobs.map((item, index) => {
               return (
                 <Col md={{ span: 6 }} key={index}>
-                  <div className={cx('content')}>
-                   
+                  <div className={cx("content")}>
                     <Link to={`/listfood${item.id}`} a={item.id}>
                       {" "}
                       <img
@@ -45,7 +44,7 @@ function Categories() {
                     </Link>
                     <Link to={`/listfood${item.id}`} a={item.id}>
                       {" "}
-                    <h3 className="icon">{item.name}</h3>
+                      <h3 className="icon">{item.name}</h3>
                     </Link>
                     <p>{item.price}</p>
                   </div>
