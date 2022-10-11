@@ -17,6 +17,12 @@ function Manage() {
   const [description, setDecription] = useState("");
   const [restaurant, setRestaurant] = useState("");
   const [address, setAddress] = useState("");
+  const [search, setSearch] = useState("");
+  const [sort, setSort] = useState("");
+  const [order, setOrder] = useState("");
+const namesort = 'name'
+const pricesort = 'price'
+const gradesort = 'grade'
   const inputRef = useRef(null);
 
   const handlePreviewAvatar = (e) => {
@@ -47,9 +53,8 @@ function Manage() {
     setAddress("");
     setAvatar();
     inputRef.current.value = null;
-    localStorage.setItem("cart1", JSON.stringify(hey));
+    localStorage.setItem("cart1", JSON.stringify(item));
   };
-  console.log(avatar);
   useEffect(() => {
     return () => {
       avatar && URL.revokeObjectURL(avatar);
@@ -65,11 +70,85 @@ function Manage() {
       console.error(error);
     }
   };
-  useEffect(() => {
-    fetchJobs();
-  }, [number]);
+  const fetchJobs1 = async () => {
+    try {
+      const reponse = await axios.get(
+        `https://633dafa5f2b0e623dc798346.mockapi.io/api/foods?name=${search}&sortBy=${sort}&order=${order}&page=${number}&limit=20`
+      );
+      console.log(search);
+      setJobs(reponse.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const handleSearch = (e) => {
+    e.preventDefault();
+    console.log(search);
+    console.log(number);
+
+    fetchJobs1();
+  };
+  const handleSort = (e,b) => {
+    e.preventDefault();
+    setOrder(e.target.value);
+    setSort(b);
+  };
+  useEffect(
+    () => {
+      fetchJobs1();
+      console.log(order)
+    },
+    [number] 
+  );
+  useEffect(
+    () => {
+      fetchJobs1();
+      console.log(order)
+    },
+    [order] 
+  );
   return (
     <div className={cx("all")}>
+      <div className={cx('control')}>
+      <form onSubmit={handleSearch}>
+        <input
+          value={search}
+          type="text"
+          placeholder="search"
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </form>
+     <form>
+     name sort <select
+          name="3"
+          className={cx("select")}
+          onChange={(e) => handleSort(e,namesort)}
+        >
+          <option value="desc">desc</option>
+          <option value="asc">asc</option>
+        </select>
+      </form>
+      <form>
+     grade sort <select
+          name="3"
+          className={cx("select")}
+          onChange={(e) => handleSort(e,gradesort)}
+        >
+          <option value="desc">desc</option>
+          <option value="asc">asc</option>
+        </select>
+      </form>
+      <form>
+     price sort <select
+          name="3"
+          className={cx("select")}
+          onChange={(e) => handleSort(e,pricesort)}
+        >
+          <option value="desc">desc</option>
+          <option value="asc">asc</option>
+        </select>
+      </form>
+      </div>
       <table className={cx("container")}>
         <tbody>
           <tr>
