@@ -8,7 +8,7 @@ import classNames from "classnames/bind";
 const cx = classNames.bind(styles);
 
 function Pay() {
-  const { user, setUser, cart, setCart, increase, decrease, bill,removeCart } =
+  const { user, setUser, cart, setCart, increase, decrease, bill, removeCart } =
     useGlobalContext();
   const [jobs, setJobs] = useState([]);
   const [jobs1, setJobs1] = useState([]);
@@ -17,13 +17,12 @@ function Pay() {
   const [code, setCode] = useState("");
   const [code1, setCode1] = useState("");
 
-
   const fetchJobs = async () => {
     try {
       const reponse = await axios.get(
         `https://provinces.open-api.vn/api/p/?depth=2`
       );
-      
+
       setJobs(reponse.data);
       console.log(reponse);
     } catch (error) {
@@ -39,7 +38,7 @@ function Pay() {
       const reponse = await axios.get(
         `https://provinces.open-api.vn/api/p/${event}?depth=2`
       );
-     
+
       setJobs1(reponse.data.districts);
     } catch (error) {
       console.error(error);
@@ -56,12 +55,11 @@ function Pay() {
       console.error(error);
     }
   };
-  if (user.length === 0 ) {
+  if (user.length === 0) {
     return <Navigate to="/login" replace />;
-  } else if(cart.length === 0){
+  } else if (cart.length === 0) {
     return <Navigate to="/" replace />;
-  }
-  else {
+  } else {
     return (
       <div style={{ marginTop: "100px" }}>
         {cart.map((item) => {
@@ -77,13 +75,13 @@ function Pay() {
           );
         })}
         {bill !== 0 && <h2 className={cx("fee")}> Total fee: {bill}</h2>}
-        <form className={cx('form')}>
+        <form className={cx("form")}>
           <select
             name="1"
             onChange={(event) => {
               fetchJobs1(event.target.value);
             }}
-            className={cx('select')}
+            className={cx("select")}
           >
             {jobs.map((item, index) => {
               return (
@@ -99,8 +97,7 @@ function Pay() {
               onChange={(event) => {
                 fetchJobs2(event.target.value);
               }}
-              className={cx('select')}
-
+              className={cx("select")}
             >
               {jobs1 !== [] &&
                 jobs1.map((item, index) => {
@@ -113,8 +110,7 @@ function Pay() {
             </select>
           )}
           {code1 !== "" && (
-            <select name="3"             className={cx('select')}
-            >
+            <select name="3" className={cx("select")}>
               {jobs2 !== [] &&
                 jobs2.map((item, index) => {
                   return (
@@ -126,7 +122,11 @@ function Pay() {
             </select>
           )}
         </form>
-     <button className={cx('dathang')}><Link  to='/success' onClick={removeCart}>Dat Hang</Link></button>   
+        <button className={cx("dathang")}>
+          <Link to="/success" onClick={removeCart}>
+            Dat Hang
+          </Link>
+        </button>
       </div>
     );
   }
