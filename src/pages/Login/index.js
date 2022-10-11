@@ -43,7 +43,6 @@ function Login() {
       setEmailErr(false);
     }
   };
-  console.log(user.length);
   if (user.length !== 0) {
     return <Navigate to="/pay" replace />;
   } else {

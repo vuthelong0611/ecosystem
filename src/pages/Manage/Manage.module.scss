@@ -1,105 +1,147 @@
-.img {
-    height: 100px;
-    width: 100px;
-    border-radius: 10px;
-    padding: 10px;
-}
 
-// .container-fluid{
-//     margin-right: 10px;
-// }
-@media screen and (max-width: 1100px) {
+
+
+@media screen and (max-width: 739px){
     .img {
-        height: 133.6px;
-        width: 237.6px;
+        height: 100px;
+        width: 100px;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .container {
+        border-bottom: solid;
+        border-top: solid;
+        font-weight: 100;
+        font-size: small;
+        width: 100%;
+    }
+    .all{
+        margin-top: 100px;
+    }
+    .more {
+        margin-left: 15%;
+        margin-top: 30px;
+        cursor: pointer;
+        width: 100px;
+        &:hover {
+            background-color: #008B8B;
+        }
+    }
+    
+    .button {
+        display: flex;
+    }
+    .form {
+        margin-top: 20px;
+        border: solid;
+        margin-left: 10px;
+        width: 250px;
+    }
+    .img_file {
+        height: 100px;
+        width: 100px;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .btn-submit{
+        margin-left: 30%;
+        margin-top: 10px;
     }
 }
+@media screen and (min-width: 740px) and (max-width: 1023px){
 
-/* On screens that are 600px wide or less, the background color is olive */
-@media screen and (max-width: 600px) {}
-
-.container {
-    margin-left: 45px;
-    border: solid;
-    flex: 5;
 }
-
-.btn {
-    margin-left: 20px;
-    cursor: pointer;
-    border: none;
-    background-color: #008B8B;
-    border-radius: 4px;
-    color: white;
-}
-
-.btn1 {
-    margin-left: 20px;
-    cursor: pointer;
-    border: none;
-    background-color: #008B8B;
-    border-radius: 4px;
-    color: white;
-    padding: 3.5px 6px;
-}
-
-.more {
-    margin-left: 40%;
-    margin-top: 50px;
-    cursor: pointer;
-
-    width: 100px;
-
-    &:hover {
+@media screen and (min-width: 1024px){
+    .img {
+        height: 100px;
+        width: 100px;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .container {
+        margin-left: 45px;
+        border: solid;
+        flex: 5;
+    }
+    
+    .btn {
+        margin-left: 20px;
+        cursor: pointer;
+        border: none;
         background-color: #008B8B;
+        border-radius: 4px;
+        color: white;
     }
-}
-
-.button {
-    display: flex;
-}
-
-.content {
-    text-align: center;
-}
-
-.img_file {
-    height: 100px;
-    width: 100px;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.all {
-    display: flex;
-    margin-top: 110px;
-    justify-content: space-around;
-}
-
-.form {
-    flex: 3;
-    border: solid;
-    height: 500px;
-    margin-left: 10px;
-    display: flex;
-    flex-direction: column;
-}
-.input{
-    margin-top: 10px;
-    width: 80%;
-    text-align: center;
-    margin-left: 45px;
-
-}
-.btn-submit{
-    width: 100px;
-    margin-top: 30px;
-    margin-left: 40%;
-    cursor: pointer;
-}
-.button{
-    display: flex;
-    flex-direction: column;
-    height: 50px;
-    flex: 2;
+    
+    .btn1 {
+        margin-left: 20px;
+        cursor: pointer;
+        border: none;
+        background-color: #008B8B;
+        border-radius: 4px;
+        color: white;
+        padding: 3.5px 6px;
+    }
+    
+    .more {
+        margin-left: 40%;
+        margin-top: 50px;
+        cursor: pointer;
+    
+        width: 100px;
+    
+        &:hover {
+            background-color: #008B8B;
+        }
+    }
+    
+    .button {
+        display: flex;
+    }
+    
+    .content {
+        text-align: center;
+    }
+    
+    .img_file {
+        height: 100px;
+        width: 100px;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    
+    .all {
+        display: flex;
+        margin-top: 110px;
+        justify-content: space-around;
+    }
+    
+    .form {
+        flex: 3;
+        border: solid;
+        height: 500px;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .input{
+        margin-top: 10px;
+        width: 80%;
+        text-align: center;
+        margin-left: 45px;
+    
+    }
+    .btn-submit{
+        width: 100px;
+        margin-top: 30px;
+        margin-left: 40%;
+        cursor: pointer;
+    }
+    .button{
+        display: flex;
+        flex-direction: column;
+        height: 50px;
+        flex: 2;
+    }
+    
 }

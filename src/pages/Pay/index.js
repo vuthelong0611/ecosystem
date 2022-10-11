@@ -56,9 +56,12 @@ function Pay() {
       console.error(error);
     }
   };
-  if (user.length === 0) {
+  if (user.length === 0 ) {
     return <Navigate to="/login" replace />;
-  } else {
+  } else if(cart.length === 0){
+    return <Navigate to="/" replace />;
+  }
+  else {
     return (
       <div style={{ marginTop: "100px" }}>
         {cart.map((item) => {
@@ -123,7 +126,7 @@ function Pay() {
             </select>
           )}
         </form>
-        <Link className={cx('dathang')} to='/success' onClick={removeCart}>Dat Hang</Link>
+     <button className={cx('dathang')}><Link  to='/success' onClick={removeCart}>Dat Hang</Link></button>   
       </div>
     );
   }

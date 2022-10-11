@@ -11,7 +11,7 @@ import DetailFood from "./pages/DetailFood";
 import Pay from "./pages/Pay";
 import Manage from "./pages/Manage";
 import Success from "./pages/Success";
-const {Content} = Layout;
+const {Content,Footer} = Layout;
 
 const App = () => {
   return (
@@ -24,6 +24,7 @@ const App = () => {
               <Layout>
                 <Header1></Header1>
                 <Categories />
+
               </Layout>
             }
           />
@@ -78,6 +79,7 @@ const App = () => {
               <Layout>
                 <Header1></Header1>
                 <Content><Manage /></Content> 
+                <Footer></Footer>
               </Layout>
             }
           />

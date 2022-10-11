@@ -1,7 +1,7 @@
 import styles from "./Manage.module.scss";
 import classNames from "classnames/bind";
 import { Link, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Row, Col, Layout } from "antd";
 import axios from "axios";
 import { useGlobalContext } from "../../components/Context";
@@ -17,6 +17,7 @@ function Manage() {
   const [description, setDecription] = useState("");
   const [restaurant, setRestaurant] = useState("");
   const [address, setAddress] = useState("");
+  const inputRef = useRef(null);
 
   const handlePreviewAvatar = (e) => {
     const file = e.target.files[0];
@@ -24,6 +25,7 @@ function Manage() {
     setAvatar(file);
     console.log(file);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const item = [
@@ -37,14 +39,22 @@ function Manage() {
       },
     ];
     console.log(item);
+    console.log(avatar);
     setHey(item);
     setName("");
     setDecription("");
     setRestaurant("");
     setAddress("");
     setAvatar();
+    inputRef.current.value = null;
     localStorage.setItem("cart1", JSON.stringify(hey));
   };
+  console.log(avatar);
+  useEffect(() => {
+    return () => {
+      avatar && URL.revokeObjectURL(avatar);
+    };
+  }, [avatar]);
   const fetchJobs = async () => {
     try {
       const reponse = await axios.get(
@@ -58,9 +68,8 @@ function Manage() {
   useEffect(() => {
     fetchJobs();
   }, [number]);
-
   return (
-    <section className={cx("all")}>
+    <div className={cx("all")}>
       <table className={cx("container")}>
         <tbody>
           <tr>
@@ -97,8 +106,8 @@ function Manage() {
             setNumber((prev) => {
               if (number > 1) {
                 return prev - 1;
-              }else{
-                return prev
+              } else {
+                return prev;
               }
             })
           }
@@ -114,7 +123,13 @@ function Manage() {
         </button>
       </div>
       <form className={cx("form")} onSubmit={(e) => handleSubmit(e)}>
-        <input type="file" onChange={handlePreviewAvatar} required />
+        <input
+          type="file"
+          onChange={handlePreviewAvatar}
+          required
+          accept=".jpg"
+          ref={inputRef}
+        />
         {avatar && (
           <img src={avatar.preview} alt="" className={cx("img_file")}></img>
         )}
@@ -160,7 +175,7 @@ function Manage() {
         />
         <input type="submit" className={cx("btn-submit")} />
       </form>
-    </section>
+    </div>
   );
 }
 

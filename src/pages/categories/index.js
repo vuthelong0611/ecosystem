@@ -27,7 +27,7 @@ function Categories() {
   return (
     <div className={cx("container")}>
       <h2>Home</h2>
-      <div id="about" className="block aboutBlock">
+      <div  className={cx('block')}>
         <div className="container-fluid">
           <Row gutter={[16, 16]}>
             {jobs.map((item, index) => {

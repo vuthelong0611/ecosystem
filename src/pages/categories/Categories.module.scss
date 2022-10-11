@@ -1,22 +1,37 @@
-.img{
-    height: 167px;
-    width: 297px;
-    border-radius: 4px;
-}
+
+
 // .container-fluid{
 //     margin-right: 10px;
 // }
-@media screen and (max-width: 1100px) {
+@media screen and (min-width: 740px) and (max-width: 1023px){
+  .img{
+    height: 150px;
+    width: 150px;
+    border-radius: 4px;}
+    .block{
+      margin-left: 55px;
+    }
+}
+
+  
+  /* On screens that are 600px wide or less, the background color is olive */
+  @media screen and (max-width: 739px) {
+    .img{
+      height: 150px;
+      width: 150px;
+      border-radius: 4px;
+  }
+  .block{
+    margin-left: 85px;
+  }
+  }
+  @media screen and (min-width: 1024px) {
     .img{
         height: 133.6px;
         width: 237.6px;
     }
-  }
-  
-  /* On screens that are 600px wide or less, the background color is olive */
-  @media screen and (max-width: 600px) {
-    body {
-
+    .block{
+      margin-left: 55px;
     }
   }
   .container{
