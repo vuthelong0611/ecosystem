@@ -52,6 +52,17 @@
 
 }
 @media screen and (min-width: 1024px){
+    .control{
+        display: flex;
+        flex-direction: column;
+    }
+    .sort{
+        display: flex;
+        flex-direction: column;
+    }
+    .select{
+        margin-left: 10px;
+    }
     .img {
         height: 100px;
         width: 100px;

@@ -1,6 +1,6 @@
 import styles from "./Manage.module.scss";
 import classNames from "classnames/bind";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { Row, Col, Layout } from "antd";
 import axios from "axios";
@@ -107,6 +107,16 @@ const gradesort = 'grade'
     },
     [order] 
   );
+  useEffect(
+    () => {
+      fetchJobs1();
+      console.log(order)
+    },
+    [sort] 
+  );
+  if(user[0].type !== 'type 1'){
+    return <Navigate to='/' replace />
+  }
   return (
     <div className={cx("all")}>
       <div className={cx('control')}>
@@ -118,7 +128,7 @@ const gradesort = 'grade'
           onChange={(e) => setSearch(e.target.value)}
         />
       </form>
-     <form>
+     <form className={cx('sort')}>
      name sort <select
           name="3"
           className={cx("select")}
@@ -127,18 +137,15 @@ const gradesort = 'grade'
           <option value="desc">desc</option>
           <option value="asc">asc</option>
         </select>
-      </form>
-      <form>
      grade sort <select
-          name="3"
+          name="2"
           className={cx("select")}
           onChange={(e) => handleSort(e,gradesort)}
         >
           <option value="desc">desc</option>
           <option value="asc">asc</option>
         </select>
-      </form>
-      <form>
+  
      price sort <select
           name="3"
           className={cx("select")}
