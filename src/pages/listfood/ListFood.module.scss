@@ -1,54 +1,163 @@
-.img {
-    height: 140px;
-    width: 243px;
-    border-radius: 4px;
-}
-
 // .container-fluid{
 //     margin-right: 10px;
 // }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 739px) {
     .img {
-        height: 133.6px;
-        width: 237.6px;
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
+        border-radius: 10px;
+        padding: 5px;
+    }
+    .container {
+        margin-top: 110px;
+        margin-left: 10px;
+        position: relative;
+        font-size: small;
+
+    }
+
+    .container-fluid {
+        display: flex;
+
+    }
+
+    .price {
+        display: flex;
+        margin-left: 10px;
+    }
+    .container-price{
+        display: flex;
+        flex-direction: column;
+    }
+    .content{
+        display: flex;
+    }
+
+    .btn {
+        margin-left: 20%;
+        cursor: pointer;
+        border: none;
+        background-color: #008B8B;
+        border-radius: 4px;
+        color: white;
+    }
+
+    .btn1 {
+        margin-left: 20px;
+        cursor: pointer;
+        border: none;
+        background-color: #008B8B;
+        border-radius: 4px;
+        color: white;
+        padding: 3px 3px;
+    }
+
+    .more {
+        margin-top: 50px;
+        margin-left: 40%;
+        cursor: pointer;
+        width: 100px;
+
+        &:hover {
+            background-color: #008B8B;
+        }
+    }
+
+    .p {
+        position: relative;
+
     }
 }
 
+@media screen and (min-width: 740px) and (max-width: 1023px) {
+    .img {
+        height: 133.6px;
+        width: 237.6px;
+        border-radius: 10px;
+    }
+    .container {
+        margin-top: 110px;
+        margin-left: 18%;
+        position: relative;
+        font-size: small;
+       
+    }
+    .btn {
+        margin-left: 20px;
+        cursor: pointer;
+        border: none;
+        background-color: #008B8B;
+        border-radius: 4px;
+        color: white;
+    }
+
+    .btn1 {
+        margin-left: 20px;
+        cursor: pointer;
+        border: none;
+        background-color: #008B8B;
+        border-radius: 4px;
+        color: white;
+        padding: 3.5px 6px;
+    }
+   
+
+
+}
+
 /* On screens that are 600px wide or less, the background color is olive */
-@media screen and (max-width: 600px) {}
+@media screen and (min-width: 1024px) {
+    .img {
+        height: 140px;
+        width: 243px;
+        border-radius: 4px;
+    }
 
-.container {
-    margin-top: 110px;
-    margin-left: 45px;
-}
+    .container {
+        margin-top: 110px;
+        margin-left: 45px;
+        position: relative;
+    }
 
-.price{
-    display: flex;
-}
-.btn{
-    margin-left: 20px;
-    cursor: pointer;
-    border: none;
-    background-color: #008B8B;
-    border-radius: 4px;
-    color: white;
-}
-.btn1{
-    margin-left: 20px;
-    cursor: pointer;
-    border: none;
-    background-color: #008B8B;
-    border-radius: 4px;
-    color: white;
-    padding: 3.5px 6px;
-}
-.more{
-    margin-left: 40%;
-    margin-top: 50px;
-    cursor: pointer;
-    
-width: 100px;
- &:hover{
-    background-color: #008B8B;
- }
+    .price {
+        display: flex;
+    }
+
+    .btn {
+        margin-left: 20px;
+        cursor: pointer;
+        border: none;
+        background-color: #008B8B;
+        border-radius: 4px;
+        color: white;
+    }
+
+    .btn1 {
+        margin-left: 20px;
+        cursor: pointer;
+        border: none;
+        background-color: #008B8B;
+        border-radius: 4px;
+        color: white;
+        padding: 3.5px 6px;
+    }
+
+    .more {
+        margin-left: 40%;
+        margin-top: 50px;
+        cursor: pointer;
+
+        width: 100px;
+
+        &:hover {
+            background-color: #008B8B;
+        }
+    }
+
+    .p {
+        position: relative;
+
+    }
+
 }

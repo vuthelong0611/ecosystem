@@ -33,7 +33,7 @@ function Header1() {
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRg35YAs8vvMD9O-v9heloOtzIcUfSfAXrkQ&usqp=CAU"
             alt=""
           />
-          <h2>ECOSYSTEM</h2>
+          <h2 className={cx('h2')}>ECOSYSTEM</h2>
         </Link>
 
         <div className={cx("cart")}>
