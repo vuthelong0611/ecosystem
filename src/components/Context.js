@@ -32,7 +32,7 @@ const AppProvider = ({ children }) => {
   const [cart, setCart] = useState(getLocalStorage1());
   const [hey, setHey] = useState(getLocalStorage2());
   const [alert, setAlert] = useState(false);
-
+console.log(user)
   const getBill = () => {
     let bill = 0;
     cart.forEach((element) => {

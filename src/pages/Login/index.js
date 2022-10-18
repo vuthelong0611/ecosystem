@@ -10,34 +10,34 @@ import axios from "axios";
 const cx = classNames.bind(styles);
 function Login() {
   const { user, setUser } = useGlobalContext();
-  const { register, handleSubmit } = useForm();
-  const [data, setData] = useState({});
-  const [message, setMessage] = useState("a");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [isLogin, setIsLogin] = useState(false);
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
   const [emailErr, setEmailErr] = useState(false);
   const validEmail = new RegExp(
     "^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$"
   );
-  const onSubmit1 = async (event) => {
-    event.preventDefault();
+  const onSubmit1 = async (data) => {
     try {
       const response = await axios.get(
-        `https://633dafa5f2b0e623dc798346.mockapi.io/api/users?email=${email}&password=${password}`
+        `https://633dafa5f2b0e623dc798346.mockapi.io/api/users?email=${data.email}&password=${data.password}`
       );
-      
+
       if (response !== null) {
         localStorage.setItem("user", JSON.stringify(response.data));
         window.location.reload(true);
+        console.log(response);
+      } else {
+        console.log(response);
       }
     } catch (error) {
       console.error(error);
     }
   };
   const validate = (e) => {
-    setEmail(e.target.value);
-    if (!validEmail.test(email)) {
+    if (!validEmail.test(e.target.value)) {
       setEmailErr(true);
     } else {
       setEmailErr(false);
@@ -47,7 +47,10 @@ function Login() {
     return <Navigate to="/pay" replace />;
   } else {
     return (
-      <form className={cx("container")} onSubmit={onSubmit1}>
+      <form
+        className={cx("container")}
+        onSubmit={handleSubmit((data) => onSubmit1(data))}
+      >
         <div className={cx("input")}>
           <div className={cx("p")}>Email</div>
           <input
@@ -55,7 +58,6 @@ function Login() {
             {...register("email")}
             placeholder="email"
             onChange={validate}
-            value={email}
             required
           />
         </div>
@@ -65,8 +67,6 @@ function Login() {
             type="password"
             {...register("password")}
             placeholder="password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
             required
           />
         </div>
