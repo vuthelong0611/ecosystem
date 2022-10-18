@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect, useReducer } from "react";
-import { Navigate } from "react-router-dom";
 
 const AppContext = React.createContext();
 const getLocalStorage = () => {

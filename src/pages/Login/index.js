@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import { useForm } from "react-hook-form";
 import styles from "./Login.module.scss";
 import classNames from "classnames/bind";
-import { useHisor } from "react-router-dom";
 import { Link, Navigate } from "react-router-dom";
 import { useGlobalContext } from "../../components/Context";
 import axios from "axios";
